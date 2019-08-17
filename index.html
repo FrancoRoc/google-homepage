@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      margin: 0;
+      font-size: 13px;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    .container {
+      min-height: 100vh;
+      display: grid;
+      grid-template: 38px 150px 100px 100px 50px 1fr 1fr 38px / 110px 60px 60px 60px 1fr 105px 145px 145px 105px 1fr 10px 120px 60px 100px;
+      grid-template-areas:
+      "left-header . . . . . . . . . . right-header1 products sign-in"
+      ". . . . . . . . . . . . . ."
+      ". . . . . g-image g-image g-image g-image . . . . ."
+      ". . . . . search-bar search-bar search-bar search-bar . . . . ."
+      ". . . . . . search-button lucky-button . . . . . ."
+      ". . . . . . . . . . . . . ."
+      ". . . . . . . . . . . . . ."
+      "left-footer left-footer left-footer left-footer footer-space footer-space footer-space footer-space footer-space footer-space footer-space right-footer right-footer right-footer";
+    }
+
+    .left-header {
+      grid-area: left-header;
+      margin-top: 19px;
+    }
+    #about{
+      margin-left: 20px;
+    }
+    #store {
+      margin-left: 20px;
+    }
+
+    .right-header1 {
+      grid-area: right-header1;
+      margin: 19px 0 0 15px;
+    }
+    #gmail {
+    }
+    #images {
+      margin-left: 20px;
+    }
+
+    #products {
+      grid-area: products;
+      background-image: url("https://ssl.gstatic.com/gb/images/i1_1967ca6a.png");
+      background-position-x: -118px;
+      background-position-y: -32px;
+      margin-top: 6px;
+    }
+    #sign-in {
+      grid-area: sign-in;
+      margin: 18px 0 10px 0;
+    }
+    #sign-in-text {
+      background-color: rgb(66, 133, 244);
+      border-radius: 2px;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      padding: 6px 12px 6px 12px;
+    }
+
+    #g-image {
+      grid-area: g-image;
+      margin: 0 auto;
+    }
+    #search-bar {
+      grid-area: search-bar;
+      font-size: 16px;
+      height: 40px;
+      border-radius: 28px;
+      background-image: url("https://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png");
+      background-repeat: no-repeat;
+      background-position: bottom 10px right 10px;
+      background-size: 24px 24px;
+      border: 1px solid rgb(228, 228, 228);
+      padding-left: 16px;
+      width: 465px;
+      margin: 0 auto;
+      align-self: center;
+    }
+    #search-button {
+      grid-area: search-button;
+      margin-top: 10px;
+    }
+    #lucky-button {
+      grid-area: lucky-button;
+      margin-top: 10px;
+    }
+    #srch-btn, #luck-btn {
+      background-color: rgb(242, 242, 242);
+      border-radius: 4px;
+      border: 1px solid rgb(242, 242, 242);
+      color: rgb(95, 99, 104);
+      font-size: 14px;
+      padding: 8px 16px 8px 16px;
+    }
+    #srch-btn:hover, #luck-btn:hover {
+      color: rgb(0, 0, 0);
+      border: 1px solid rgb(228, 228, 228);
+    }
+
+    .left-footer {
+      grid-area: left-footer;
+      display: grid;
+      grid-template: 1fr / 1fr;
+      grid-template-areas: 
+        "ad-bus-how";
+    }
+    #advertising {
+      grid-area: ad-bus-how;
+      padding-left: 20px;
+    }
+    #business {
+      grid-area: ad-bus-how;
+      margin-left: 105px;
+    }
+    #how {
+      grid-area: ad-bus-how;
+      margin-left: 178px;
+    }
+
+    #footer-space {
+      grid-area: footer-space;
+    }
+
+    .right-footer {
+      grid-area: right-footer;
+      display: grid;
+      grid-template: 1fr / 1fr;
+      grid-template-areas: 
+        "priv-terms-settings";
+    }
+    #privacy {
+      grid-area: priv-terms-settings;
+      padding-left: 80px;
+    }
+    #terms {
+      grid-area: priv-terms-settings;
+      margin-left: 150px;
+    }
+    #settings {
+      grid-area: priv-terms-settings;
+      margin-left: 210px;
+    }
+    
+    .header {
+      color: rgb(0, 0, 0);
+    }
+    div a {
+      text-decoration: none;
+    }
+    a:hover, .header:hover, .footer:hover {
+      text-decoration: underline;
+    }
+    div div a:hover {
+      text-decoration: none;
+    }
+    .footer {
+      color: rgb(95, 99, 104);
+      background-color: rgb(242, 242, 242);
+      border-top: 1px solid rgb(228, 228, 228);
+      padding-top: 11px;
+    }
+    #search-bar:focus {
+      outline: none;
+    }
+    #search-bar:hover {
+      box-shadow: 0px 1px 6px 0px rgb(204,204,204);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left-header">
+      <a id="about" class="header" href="#">About</a>
+      <a id="store" class="header" href="#">Store</a>
+    </div>
+    <div class="right-header1">
+      <a id="gmail" class="header" href="#">Gmail</a>
+      <a id="images" class="header" href="#">Images</a>
+    </div>
+    
+    <a id="products" href="#" alt="google products"></a>
+    <div id="sign-in"><a id="sign-in-text" href="#" alt="sign in to google">Sign in</a></div>
+    
+    <img id="g-image" alt="google logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+    <input type="text" name="search-bar" id="search-bar">
+    <div id="search-button"><a id="srch-btn" href="#" alt="search for something">Google Search</a></div>
+    <div id="lucky-button"><a id="luck-btn" href="#" alt="guess i'm just lucky">I'm Feeling Lucky</a></div>
+
+    <div class="left-footer">
+      <a id="advertising" class="footer" href="#">Advertising</a>
+      <a id="business" class="footer" href="#">Business</a>
+      <a id="how" class="footer" href="#">How Search Works</a>
+    </div>
+    <div id="footer-space" class="footer"></div>
+    <div class="right-footer">
+      <a id="privacy" class="footer" href="#">Privacy</a>
+      <a id="terms" class="footer" href="#">Terms</a>
+      <a id="settings" class="footer" href="#">Settings</a>
+    </div>
+
+  </div>
+</body>
+</html>
